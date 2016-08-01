@@ -4,7 +4,7 @@ set -eou pipefail
 
 #usage: sudo ./docker-cleanup-volumes.sh [--dry-run]
 
-docker_bin="$(which docker.io 2> /dev/null || which docker 2> /dev/null)"
+docker_bin="sudo $(which docker.io 2> /dev/null || which docker 2> /dev/null)"
 
 # Default dir
 dockerdir=/var/lib/docker
