@@ -70,11 +70,6 @@ function delete_volumes() {
   done < <(find "${targetdir}" -mindepth 1 -maxdepth 1 -type d -print0 2>/dev/null)
 }
 
-if [ $UID != 0 ]; then
-    echo "You need to be root to use this script."
-    exit 1
-fi
-
 if [ -z "$docker_bin" ] ; then
     echo "Please install docker. You can install docker by running \"wget -qO- https://get.docker.io/ | sh\"."
     exit 1
